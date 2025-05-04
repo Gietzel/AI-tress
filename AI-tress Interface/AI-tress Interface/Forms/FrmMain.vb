@@ -1,138 +1,16 @@
 ﻿Public Class FrmMain
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        hideSubmenu()
-    End Sub
+#Region "Properties"
 
-    Private Sub hideSubmenu()
+    Private Property CurrentForm As Form = Nothing
 
-        PanelPlaylistSubmenu.Visible = False
-        PanelToolsSubmenu.Visible = False
-
-    End Sub
-
-    Private Sub showSubmenu(submenu As Panel)
-
-        If submenu.Visible = False Then
-            hideSubmenu()
-            submenu.Visible = True
-        Else
-            submenu.Visible = False
-        End If
-
-    End Sub
-
-    Private Sub btnPlaylist_Click(sender As Object, e As EventArgs) Handles btnPlaylist.Click
-        showSubmenu(PanelPlaylistSubmenu)
-    End Sub
-
-    Private Sub btnTools_Click(sender As Object, e As EventArgs) Handles btnTools.Click
-        showSubmenu(PanelToolsSubmenu)
-    End Sub
-
-#Region "Buttons Submenu"
-    Private Sub button2_Click(sender As Object, e As EventArgs)
-
-        openChildForm(New Form2)
-        '...
-        'your codes
-        '...
-        hideSubmenu
-
-    End Sub
-
-    Private Sub button3_Click(sender As Object, e As EventArgs)
-        '...
-        'your codes
-        '...
-        hideSubmenu
-    End Sub
-
-    Private Sub button4_Click(sender As Object, e As EventArgs)
-        '...
-        'your codes
-        '...
-        hideSubmenu
-    End Sub
-
-    Private Sub button5_Click(sender As Object, e As EventArgs)
-        '...
-        'your codes
-        '...
-        hideSubmenu
-    End Sub
-
-    Private Sub button8_Click(sender As Object, e As EventArgs) Handles button8.Click
-        openChildForm(New Form3())
-        '...
-        'your codes
-        '...
-        hideSubmenu()
-    End Sub
-
-    Private Sub button7_Click(sender As Object, e As EventArgs) Handles button7.Click
-        '...
-        'your codes
-        '...
-        hideSubmenu()
-    End Sub
-
-    Private Sub button6_Click(sender As Object, e As EventArgs) Handles button6.Click
-        '...
-        'your codes
-        '...
-        hideSubmenu()
-    End Sub
-
-    Private Sub button1_Click(sender As Object, e As EventArgs) Handles button1.Click
-        '...
-        'your codes
-        '...
-        hideSubmenu()
-    End Sub
-
-    Private Sub button13_Click(sender As Object, e As EventArgs) Handles button13.Click
-        '...
-        'your codes
-        '...
-        hideSubmenu()
-    End Sub
-
-    Private Sub button12_Click(sender As Object, e As EventArgs) Handles button12.Click
-        '...
-        'your codes
-        '...
-        hideSubmenu()
-    End Sub
-
-    Private Sub button10_Click(sender As Object, e As EventArgs) Handles button10.Click
-        '...
-        'your codes
-        '...
-        hideSubmenu()
-    End Sub
 #End Region
 
-    Private Sub btnEqualizer_Click(sender As Object, e As EventArgs)
-        '...
-        'your codes
-        '...
-        hideSubmenu
-    End Sub
+#Region "Main Methods"
 
-    Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
-        '...
-        'your codes
-        '...
-        hideSubmenu()
-        Form2.Show()
-    End Sub
-
-    Private currentForm As Form = Nothing
-    Private Sub openChildForm(childForm As Form)
-
-        If currentForm IsNot Nothing Then currentForm.Close()
-        currentForm = childForm
+    Private Sub OpenChildForm(childForm As Form)
+        CurrentForm?.Close()
+        CurrentForm = childForm
         childForm.TopLevel = False
         childForm.FormBorderStyle = FormBorderStyle.None
         childForm.Dock = DockStyle.Fill
@@ -140,10 +18,38 @@
         PanelChildForm.Tag = childForm
         childForm.BringToFront()
         childForm.Show()
-
     End Sub
 
-    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+    Private Sub ControlSubmenu(submenu As Panel, state As Boolean)
+        submenu.Visible = state
+    End Sub
+
+#End Region
+
+#Region "Auxiliary Methods"
+
+
+
+#End Region
+
+#Region "Events"
+
+    Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ControlSubmenu(PanelResourcesSubmenu, False)
+    End Sub
+
+    Private Sub BtnResources_Click(sender As Object, e As EventArgs) Handles BtnResources.Click
+        ControlSubmenu(PanelResourcesSubmenu, Not PanelResourcesSubmenu.Visible)
+    End Sub
+
+    Private Sub BtnHelp_Click(sender As Object, e As EventArgs) Handles BtnHelp.Click
+        OpenChildForm(New Form2())
+    End Sub
+
+    Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
         Application.Exit()
     End Sub
+
+#End Region
+
 End Class
