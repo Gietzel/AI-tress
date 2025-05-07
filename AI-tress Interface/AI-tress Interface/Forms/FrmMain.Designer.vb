@@ -248,7 +248,7 @@ Partial Class FrmMain
         ' 
         ' TxtHelp
         ' 
-        TxtHelp.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        TxtHelp.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         TxtHelp.BorderStyle = BorderStyle.FixedSingle
         TxtHelp.ForeColor = Color.Gray
         TxtHelp.Location = New Point(79, 361)
@@ -259,7 +259,7 @@ Partial Class FrmMain
         ' 
         ' PictureBox9
         ' 
-        PictureBox9.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        PictureBox9.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
         PictureBox9.Location = New Point(3, 79)
         PictureBox9.Name = "PictureBox9"
@@ -278,7 +278,6 @@ Partial Class FrmMain
         Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(4)
-        MaximizeBox = False
         MinimumSize = New Size(950, 600)
         Name = "FrmMain"
         StartPosition = FormStartPosition.CenterScreen

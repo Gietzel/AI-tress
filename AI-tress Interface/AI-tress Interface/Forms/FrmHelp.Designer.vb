@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form2
+Partial Class FrmHelp
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -23,11 +23,12 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmHelp))
         BtnOK = New Button()
         ImageList32 = New ImageList(components)
         label1 = New Label()
         Label2 = New Label()
+        ToolTip1 = New ToolTip(components)
         SuspendLayout()
         ' 
         ' BtnOK
@@ -44,6 +45,7 @@ Partial Class Form2
         BtnOK.Name = "BtnOK"
         BtnOK.Size = New Size(163, 58)
         BtnOK.TabIndex = 11
+        ToolTip1.SetToolTip(BtnOK, "OK")
         BtnOK.UseVisualStyleBackColor = False
         ' 
         ' ImageList32
@@ -59,7 +61,7 @@ Partial Class Form2
         label1.AutoSize = True
         label1.Font = New Font("Rockwell", 21.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         label1.ForeColor = Color.FromArgb(CByte(235), CByte(42), CByte(83))
-        label1.Location = New Point(349, 9)
+        label1.Location = New Point(349, 17)
         label1.Margin = New Padding(4, 0, 4, 0)
         label1.Name = "label1"
         label1.Size = New Size(98, 36)
@@ -78,19 +80,18 @@ Partial Class Form2
         Label2.Text = resources.GetString("Label2.Text")
         Label2.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Form2
+        ' FrmHelp
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.LavenderBlush
         ClientSize = New Size(798, 497)
+        Controls.Add(label1)
         Controls.Add(BtnOK)
         Controls.Add(Label2)
-        Controls.Add(label1)
         Margin = New Padding(4, 3, 4, 3)
-        Name = "Form2"
+        Name = "FrmHelp"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Form2"
         ResumeLayout(False)
         PerformLayout()
 
@@ -99,4 +100,5 @@ Partial Class Form2
     Private WithEvents label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents ImageList32 As ImageList
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

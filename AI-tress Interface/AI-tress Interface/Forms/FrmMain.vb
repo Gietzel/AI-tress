@@ -43,11 +43,15 @@
     End Sub
 
     Private Sub BtnHelp_Click(sender As Object, e As EventArgs) Handles BtnHelp.Click
-        OpenChildForm(New Form2())
+        OpenChildForm(New FrmHelp())
     End Sub
 
     Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
         Application.Exit()
+    End Sub
+
+    Private Sub BtnAddClient_Click(sender As Object, e As EventArgs) Handles BtnAddClient.Click
+        OpenChildForm(New FrmAddClient())
     End Sub
 
 #End Region
