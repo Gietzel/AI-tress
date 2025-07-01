@@ -108,7 +108,7 @@ Partial Class FrmAddClient
         LblResponse.ForeColor = Color.Crimson
         LblResponse.Location = New Point(282, 336)
         LblResponse.Name = "LblResponse"
-        LblResponse.Size = New Size(351, 29)
+        LblResponse.Size = New Size(423, 29)
         LblResponse.TabIndex = 31
         LblResponse.Text = "Cliente adicionado com sucesso!"
         LblResponse.TextAlign = ContentAlignment.MiddleLeft
