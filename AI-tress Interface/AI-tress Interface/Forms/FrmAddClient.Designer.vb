@@ -33,11 +33,13 @@ Partial Class FrmAddClient
         PicIcon = New PictureBox()
         Label1 = New Label()
         ToolTip1 = New ToolTip(components)
+        PgInsert = New ProgressBar()
         CType(PicIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' BtnClose
         ' 
+        BtnClose.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         BtnClose.FlatAppearance.BorderSize = 0
         BtnClose.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(235), CByte(42), CByte(83))
         BtnClose.FlatStyle = FlatStyle.Flat
@@ -137,12 +139,22 @@ Partial Class FrmAddClient
         Label1.TabIndex = 33
         Label1.Text = "Digite o número de telefone:"
         ' 
+        ' PgInsert
+        ' 
+        PgInsert.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        PgInsert.Location = New Point(128, 342)
+        PgInsert.Name = "PgInsert"
+        PgInsert.Size = New Size(554, 23)
+        PgInsert.TabIndex = 34
+        PgInsert.Visible = False
+        ' 
         ' FrmAddClient
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.LavenderBlush
         ClientSize = New Size(798, 497)
+        Controls.Add(PgInsert)
         Controls.Add(Label1)
         Controls.Add(PicIcon)
         Controls.Add(LblResponse)
@@ -166,4 +178,5 @@ Partial Class FrmAddClient
     Friend WithEvents Label1 As Label
     Friend WithEvents ImageList32 As ImageList
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents PgInsert As ProgressBar
 End Class

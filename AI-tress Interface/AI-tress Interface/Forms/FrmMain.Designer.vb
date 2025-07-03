@@ -79,7 +79,7 @@ Partial Class FrmMain
         PanelSideMenu.Dock = DockStyle.Left
         PanelSideMenu.Location = New Point(0, 0)
         PanelSideMenu.Name = "PanelSideMenu"
-        PanelSideMenu.Size = New Size(250, 568)
+        PanelSideMenu.Size = New Size(250, 561)
         PanelSideMenu.TabIndex = 0
         ' 
         ' BtnExit
@@ -243,7 +243,7 @@ Partial Class FrmMain
         PanelChildForm.Dock = DockStyle.Fill
         PanelChildForm.Location = New Point(250, 0)
         PanelChildForm.Name = "PanelChildForm"
-        PanelChildForm.Size = New Size(684, 568)
+        PanelChildForm.Size = New Size(834, 561)
         PanelChildForm.TabIndex = 2
         ' 
         ' TxtHelp
@@ -254,7 +254,7 @@ Partial Class FrmMain
         TxtHelp.Location = New Point(79, 361)
         TxtHelp.Name = "TxtHelp"
         TxtHelp.PlaceholderText = " Como posso ajudar?"
-        TxtHelp.Size = New Size(533, 23)
+        TxtHelp.Size = New Size(683, 23)
         TxtHelp.TabIndex = 1
         ' 
         ' PictureBox9
@@ -263,7 +263,7 @@ Partial Class FrmMain
         PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
         PictureBox9.Location = New Point(3, 79)
         PictureBox9.Name = "PictureBox9"
-        PictureBox9.Size = New Size(681, 276)
+        PictureBox9.Size = New Size(831, 269)
         PictureBox9.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox9.TabIndex = 0
         PictureBox9.TabStop = False
@@ -272,13 +272,13 @@ Partial Class FrmMain
         ' 
         AutoScaleDimensions = New SizeF(8F, 16F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(934, 568)
+        ClientSize = New Size(1084, 561)
         Controls.Add(PanelChildForm)
         Controls.Add(PanelSideMenu)
         Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(4)
-        MinimumSize = New Size(950, 600)
+        MinimumSize = New Size(1100, 600)
         Name = "FrmMain"
         StartPosition = FormStartPosition.CenterScreen
         panelLogo.ResumeLayout(False)
