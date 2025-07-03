@@ -108,7 +108,7 @@ Partial Class FrmAddClient
         LblResponse.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         LblResponse.Font = New Font("Microsoft Sans Serif", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         LblResponse.ForeColor = Color.Crimson
-        LblResponse.Location = New Point(282, 336)
+        LblResponse.Location = New Point(277, 336)
         LblResponse.Name = "LblResponse"
         LblResponse.Size = New Size(423, 29)
         LblResponse.TabIndex = 31
@@ -120,7 +120,7 @@ Partial Class FrmAddClient
         ' 
         PicIcon.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
         PicIcon.Image = CType(resources.GetObject("PicIcon.Image"), Image)
-        PicIcon.Location = New Point(252, 336)
+        PicIcon.Location = New Point(247, 336)
         PicIcon.Name = "PicIcon"
         PicIcon.Size = New Size(24, 29)
         PicIcon.SizeMode = PictureBoxSizeMode.Zoom

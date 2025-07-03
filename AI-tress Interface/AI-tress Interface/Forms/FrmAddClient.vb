@@ -8,7 +8,8 @@ Public Class FrmAddClient
 
     Private Property MSG_SUCCESS_INSERT = "Cliente adicionado com sucesso!"
     Private Property MSG_ERROR_INSERT = "Erro durante inserção do cliente: "
-    Private Property MSG_ERROR_INPUT = "Número de telefone inválido."
+    Private Property MSG_ERROR_INPUT = "   Número de telefone inválido."
+    Private Property MSG_ERROR_DUPLICATE = "Número de telefone já cadastrado."
     Private Const PHONE_NUMBER_LENGTH As Integer = 11
 
 #End Region
@@ -38,11 +39,18 @@ Public Class FrmAddClient
                     If Long.TryParse(clientNumConverted, clientNum) Then
                         IncreaseProgress(40)
 
+                        If Not ValidateInsert(clientNum) Then
+                            PicIcon.Image = Image.FromFile($"{mediumIconsDir}404-error.png")
+                            LblResponse.Text = MSG_ERROR_DUPLICATE
+
+                            Return
+                        End If
+
+                        IncreaseProgress(60)
+
                         Dim newClient As New Clients With {
                         .Number = clientNum
                     }
-
-                        IncreaseProgress(60)
 
                         Using ctx = DbContextFactory.CreateContext()
                             ctx.Clients.Add(newClient)
@@ -74,6 +82,12 @@ Public Class FrmAddClient
 #End Region
 
 #Region "Auxiliar Methods"
+
+    Private Function ValidateInsert(clientNum As Long) As Boolean
+        Using ctx = DbContextFactory.CreateContext()
+            Return Not ctx.Clients.Any(Function(c) c.Number = clientNum)
+        End Using
+    End Function
 
     Private Sub StartLoadingUX(loadingState As Boolean)
         PicIcon.Visible = Not loadingState
